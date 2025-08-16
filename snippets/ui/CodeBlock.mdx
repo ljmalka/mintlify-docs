@@ -1,0 +1,6 @@
+// Use this for interpolated strings inside a code-looking block
+export default function CodeBlock({ content, language = '' }) {
+return (
+<pre><code className={`language-${language}`}>{content}</code></pre>
+);
+}

@@ -1,0 +1,8 @@
+export default function IntegrationHeader({ data }) {
+return (
+<div className="not-prose">
+<h1 className="text-2xl font-semibold">{data.name}</h1>
+<p className="text-sm opacity-80">{data.vertical} · {data.kind} · {data.status}</p>
+</div>
+);
+}

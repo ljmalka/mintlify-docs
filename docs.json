@@ -21,6 +21,15 @@
               "development"
             ]
           },
+            {
+            "group": "Integrations",
+            "pages": [
+              "integrations/catalog",
+              "integrations/shopify",
+              "integrations/woocommerce",
+              "integrations/tiktok"
+            ]
+          },
           {
             "group": "Customization",
             "pages": [

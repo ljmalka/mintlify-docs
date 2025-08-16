@@ -1,0 +1,19 @@
+export default function FeatureMatrix({ data }) {
+const f = data.features || {};
+const Row = ({ label, value }) => (
+<tr><td className="pr-4 py-1">{label}</td><td className="py-1">{String(value)}</td></tr>
+);
+return (
+<table>
+<tbody>
+<Row label="Webhook ingestion" value={f.webhookIngestion} />
+<Row label="GA4 mappings" value={f.ga4Mappings} />
+<Row label="S2S postback" value={f.s2sPostback} />
+<Row label="Conversion API" value={f.capi} />
+<Row label="Cross-domain" value={f.crossDomain} />
+<Row label="Multi-property" value={f.multiProperty} />
+<Row label="Deduplication" value={f.deduplication} />
+</tbody>
+</table>
+);
+}

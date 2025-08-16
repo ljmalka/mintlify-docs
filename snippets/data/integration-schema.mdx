@@ -1,0 +1,29 @@
+export const makeIntegration = ({
+id, name, vertical, kind, status,
+auth, // { type: 'API_KEY'|'OAUTH'|'NONE' }
+events, // { inbound: string[], outbound: string[] }
+features, // object of flags/strings
+privacy, // { pii, consent, dataResidency }
+limits, // { rateLimit, pagination, webhooks }
+docsLinks, // { vendor, apiRef, status, pricing }
+plans, // [ 'Starter'|'Pro'|'Enterprise' ]
+notes // optional string[]
+}) => ({
+id, name, vertical, kind, status,
+auth, events, features, privacy, limits, docsLinks, plans, notes,
+});
+
+
+export const featureDefaults = {
+clickTracking: false,
+s2sPostback: false,
+webhookIngestion: false,
+ga4Mappings: false,
+segmentMappings: false,
+consentMode: 'none', // 'gcm' | 'tcf' | 'custom' | 'none'
+crossDomain: false,
+multiProperty: false,
+deduplication: 'none', // 'eventId' | 'clickId' | 'hybrid' | 'none'
+offlineConversions: false,
+capi: false, // Conversion API style destination
+};

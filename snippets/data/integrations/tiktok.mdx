@@ -1,0 +1,38 @@
+import { makeIntegration, featureDefaults } from '../integration-schema.mdx';
+
+
+export const tiktok = makeIntegration({
+id: 'tiktok',
+name: 'TikTok Ads',
+vertical: 'advertising',
+kind: 'destination',
+status: 'GA',
+auth: { type: 'OAUTH' },
+events: {
+inbound: [],
+outbound: ['Purchase', 'Lead', 'CompletePayment', 'AddToCart']
+},
+features: {
+...featureDefaults,
+s2sPostback: true,
+ga4Mappings: false,
+capi: true,
+deduplication: 'clickId',
+},
+privacy: {
+pii: 'hashed',
+consent: 'required',
+dataResidency: 'EU'
+},
+limits: { rateLimit: 'vendor-defined', pagination: 'n/a', webhooks: false },
+docsLinks: {
+vendor: 'https://ads.tiktok.com',
+apiRef: 'https://ads.tiktok.com/marketing_api/docs',
+status: 'https://status.tiktok.com',
+pricing: 'https://ads.tiktok.com/help/article?aid=10049932'
+},
+plans: ['Pro', 'Enterprise'],
+notes: [
+'Supports TikTok Events Testing Tool via AnyTrack',
+]
+});

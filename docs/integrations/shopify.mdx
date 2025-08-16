@@ -1,0 +1,26 @@
+---
+title: Shopify Integration
+description: Setup, features, and privacy considerations for Shopify.
+---
+
+
+import { shopify } from '/snippets/data/integrations/shopify.mdx';
+import Header from '/snippets/ui/IntegrationHeader.mdx';
+import FeatureMatrix from '/snippets/ui/FeatureMatrix.mdx';
+import PrivacyPanel from '/snippets/ui/PrivacyPanel.mdx';
+import CodeBlock from '/snippets/ui/CodeBlock.mdx';
+
+
+<Header data={shopify} />
+
+
+## Capabilities
+<FeatureMatrix data={shopify} />
+
+
+## Privacy
+<PrivacyPanel data={shopify} />
+
+
+## Setup
+<CodeBlock language="bash" content={`curl -H \"Authorization: Bearer ${'YOUR_TOKEN'}\" https://api.example.com`} />

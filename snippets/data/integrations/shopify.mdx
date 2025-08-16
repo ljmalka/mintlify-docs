@@ -1,0 +1,39 @@
+import { makeIntegration, featureDefaults } from '../integration-schema.mdx';
+
+
+export const shopify = makeIntegration({
+id: 'shopify',
+name: 'Shopify',
+vertical: 'ecommerce',
+kind: 'source+destination',
+status: 'GA',
+auth: { type: 'OAUTH' },
+events: {
+inbound: ['Purchase', 'AddToCart', 'PageView', 'InitiateCheckout'],
+outbound: ['Purchase', 'Lead', 'CustomEvent']
+},
+features: {
+...featureDefaults,
+webhookIngestion: true,
+ga4Mappings: true,
+crossDomain: true,
+deduplication: 'eventId',
+},
+privacy: {
+pii: 'hashed',
+consent: 'required',
+dataResidency: 'EU'
+},
+limits: { rateLimit: '10 rps', pagination: 'cursor', webhooks: true },
+docsLinks: {
+vendor: 'https://help.shopify.com',
+apiRef: 'https://shopify.dev',
+status: 'https://status.shopify.com',
+pricing: 'https://www.shopify.com/pricing'
+},
+plans: ['Pro', 'Enterprise'],
+notes: [
+'Requires AnyTrack tag on storefront domain',
+'Cross-domain tracking recommended for checkout subdomain',
+]
+});

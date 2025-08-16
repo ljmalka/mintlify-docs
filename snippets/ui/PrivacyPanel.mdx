@@ -1,0 +1,16 @@
+export default function PrivacyPanel({ data }) {
+const p = data.privacy || {};
+return (
+<div className="border rounded p-3 my-3">
+<h3 className="text-lg font-medium">Privacy & Compliance</h3>
+<ul className="list-disc ml-5">
+<li>PII handling: {p.pii}</li>
+<li>Consent requirement: {p.consent}</li>
+<li>Data residency: {p.dataResidency}</li>
+</ul>
+<p className="text-sm opacity-70 mt-2">
+Ensure first-party data collection and consent signals (e.g., GCM/TCF) are respected per vendor policy and browser restrictions.
+</p>
+</div>
+);
+}
