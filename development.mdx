@@ -4,6 +4,9 @@ description: "Preview changes locally to update your docs"
 ---
 
 import codeWarning from '/snippets/snippet-code-warning.mdx';
+import { tgid, params } from '/snippets/clickbank.mdx';
+import integrationCard from '/snippets/integration-card.mdx';
+
 
 <Info>
   **Prerequisites**:
@@ -12,9 +15,13 @@ import codeWarning from '/snippets/snippet-code-warning.mdx';
   - A docs repository with a `docs.json` file
 </Info>
 
+<integrationCard />
+
 Follow these steps to install and run Mintlify on your operating system.
 
-<codeWarning/>
+I like the {tgid} integration integrates with {params.subid} and {params.event}
+
+<codeWarning />
 
 <Steps>
   <Step title="Install the Mintlify CLI">
@@ -30,6 +37,9 @@ Follow these steps to install and run Mintlify on your operating system.
     ```
 
     A local preview of your documentation will be available at `http://localhost:3000`.
+  </Step>
+  <Step title="New Step">
+    
   </Step>
 </Steps>
 
@@ -54,6 +64,8 @@ Please note that each CLI release is associated with a specific version of Mintl
 ```bash
 npm mint update
 ```
+
+{ tgid }
 
 ## Validating links
 
