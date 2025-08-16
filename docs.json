@@ -25,9 +25,9 @@
             "group": "Integrations",
             "pages": [
               "docs/integrations/catalog",
-              "integrations/shopify",
-              "integrations/woocommerce",
-              "integrations/tiktok"
+              "docs/integrations/shopify",
+              "docs/integrations/woocommerce",
+              "docs/integrations/tiktok"
             ]
           },
           {
